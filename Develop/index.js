@@ -9,14 +9,14 @@ const questions = () => {
         type: 'input',
         name: 'projectName',
         message: 'What is the name of your project?',
-        validate: nameInput => {
-            if (!nameInput) {
+        validate: projectNameInput => {
+            if (!projectNameInput) {
                 console.log('please enter the name of your project!');
                 return false;
             } else {
-              return true;  
+              return true;
             }
-           
+       
         }
     },
     {
@@ -64,19 +64,10 @@ const questions = () => {
         message: 'Choose a license type for your project:',
         choices: [
             'GNU General Public License (GPL)',
-            'GNU lesser General Public License (LGPL)',
             'Apache License',
             'BSD License',
             'MIT License'
-        ],
-        validate: licenseChoice => {
-            if (!licenseChoice) {
-                console.log('Please choose a license for your project!');
-                return false;
-            } else {
-                return true;
-            }
-        }
+        ]
     },
     {
         type: 'input',
@@ -95,12 +86,55 @@ const questions = () => {
         type: 'input',
         name: 'tests',
         message: 'Provide information on how to run the tests for you application:'
+    },
+    {
+        type: 'name',
+        name: 'name',
+        message: 'Enter your name:',
+        validate: nameInput => {
+            if (!nameInput) {
+                console.log('Please enter your name!');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+       type: 'input',
+       name: 'githubUserName',
+       message: 'Enter your GitHub username:',
+       validate: github => {
+           if (!github) {
+               console.log('Please enter your github username!');
+               return false;
+           } else {
+               return true;
+           }
+       }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your email address:',
+        validate: emailInput => {
+            if (!emailInput) {
+                console.log('Please enter your email address!');
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
-])
+]);
 };
 
+questions();
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    
+}
 
 // TODO: Create a function to initialize app
 function init() {}
