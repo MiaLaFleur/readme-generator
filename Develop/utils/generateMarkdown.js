@@ -11,7 +11,9 @@ function renderLicenseBadge(userData) {
     return `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
   } else if (license === 'MIT License') {
     return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-  };
+  } else {
+    return '';
+  }
   
 }
 
@@ -950,12 +952,54 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 `;
+  } else {
+    return '';
   }
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown(userData) {
+  return `
+  # ${projectName}  ${renderLicenseBadge(userData)}
+
+  ## Description
+
+  ${projectDescription}
+
+  ## Table of Contents (Optional)
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
+  ## Installation
+
+  ${installation}
+
+  ## Usage
+
+  ${usage}
+
+  ## License
+
+  ${renderLicenseSection(userData)}
+
+  ## Contributing
+
+  ${contributing}
+
+  ## Tests
+
+  ${tests}
+
+  ## Questions
+
+  ${name}
+  ${githubUserName}
+  ${email}
 
 `;
 }
