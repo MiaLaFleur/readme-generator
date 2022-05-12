@@ -1001,9 +1001,11 @@ function generateMarkdown(userData) {
 
   ## Questions
 
-  ${name}
-  ${githubUserName}
-  ${email}
+  | My Contact Info|
+  |----------|
+  |${name}|
+  |GitHub: ${githubUserName}|
+  |My Email: ${email}|
 
 `;
 }
