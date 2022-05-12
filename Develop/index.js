@@ -128,23 +128,12 @@ const questions = () => {
             }
         }
     }
-]);
+]).then(userData => {
+    fs.writeFile('../Develop/utils/README.md', generateMarkdown(userData), function(err) {
+        if (err) console.log(err);
+    })
+})
+
 };
 
-questions().then(userData => {
-    return writeToFile(userData)
-});
-
-// TODO: Create a function to write README file
-function writeToFile() {
-    fs.writeFile('./Develop/utils/README.md', generateMarkdown(userData));
-        
-}
-
-// TODO: Create a function to initialize app
-function init() {
-}
-
-// Function call to initialize app
-// init();
-// writeToFile(userData);
+questions();
