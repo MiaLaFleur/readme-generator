@@ -20,6 +20,8 @@
   ## Usage
 
   To use this application, run the command "node index.js"
+  
+  Here is a walkthrough video: https://drive.google.com/file/d/1eadZgiRHL43sd4aEYCf8H5Jdadl_25CM/view
 
   ## License
 
